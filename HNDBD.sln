@@ -1,15 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CDT", "CDT\CDT.csproj", "{A48C0424-B640-40F9-9F72-9D96667B6160}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanhSoCT", "DanhSoCT\DanhSoCT.csproj", "{086EA587-F26F-4882-934C-E98570DBE130}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckNoQH", "CheckNoQH\CheckNoQH.csproj", "{3A97415B-364C-4E75-B38E-33D9A15A01C1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckNgayGH", "CheckNgayGH\CheckNgayGH.csproj", "{26C09450-0C61-4F91-81D6-6A84B4745198}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DanhSTT", "DanhSTT\DanhSTT.csproj", "{CFE12B76-C308-4F66-A212-CED0A7C81396}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +23,10 @@ Global
 		{086EA587-F26F-4882-934C-E98570DBE130}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{086EA587-F26F-4882-934C-E98570DBE130}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{086EA587-F26F-4882-934C-E98570DBE130}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFE12B76-C308-4F66-A212-CED0A7C81396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFE12B76-C308-4F66-A212-CED0A7C81396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFE12B76-C308-4F66-A212-CED0A7C81396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFE12B76-C308-4F66-A212-CED0A7C81396}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A97415B-364C-4E75-B38E-33D9A15A01C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3A97415B-364C-4E75-B38E-33D9A15A01C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A97415B-364C-4E75-B38E-33D9A15A01C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
