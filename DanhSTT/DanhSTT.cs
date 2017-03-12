@@ -24,14 +24,14 @@ namespace DanhSTT
         public void ExecuteBefore()
         {
             DataRow drMaster = _data.DsData.Tables[0].Rows[_data.CurMasterIndex];
-            if (drMaster.RowState != DataRowState.Added)
+            if (drMaster.RowState == DataRowState.Deleted)
                 return;
 
             var currentMTID = drMaster["MTID"].ToString();
             //Lấy maximum STT trong DB
             int maxStt = Convert.ToInt32(_data.DbData.GetDataTable("select MAX(Stt) as max from DTNhanNo").Rows[0]["max"]);
             DataView dv = new DataView(_data.DsData.Tables[1]);
-            dv.RowStateFilter = DataViewRowState.Added | DataViewRowState.Deleted | DataViewRowState.ModifiedCurrent;
+            dv.RowStateFilter = DataViewRowState.Added;
 
             foreach (DataRowView drv in dv)
             {
