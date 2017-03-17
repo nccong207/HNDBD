@@ -27,9 +27,16 @@ namespace DanhSTT
             if (drMaster.RowState == DataRowState.Deleted)
                 return;
 
-            var currentMTID = drMaster["MTID"].ToString();
+            var currentCQQD = drMaster["CQQD"].ToString();
+            var currentNgayNN = drMaster["NgayNN"].ToString();
             //Lấy maximum STT trong DB
-            int maxStt = Convert.ToInt32(_data.DbData.GetDataTable("select MAX(Stt) as max from DTNhanNo").Rows[0]["max"]);
+
+            //Lấy maximum STT trong DB
+            string sqlQuery = "select year(b.NgayNN) as year, CASE WHEN b.CQQD LIKE '%[0-9]%' THEN LEFT(b.CQQD, LEN(b.CQQD)-2) ELSE b.CQQD END as CQQD, max(Stt) as max" +
+                " FROM DTNhanNo a join MTNhanNo b on a.MTID = b.MTID where b.CQQD like  '%{0}%' and year(b.NgayNN) = year('{1}') group by year(b.NgayNN), " +
+                "CASE WHEN b.CQQD LIKE '%[0-9]%' THEN LEFT(b.CQQD, LEN(b.CQQD)-2) ELSE b.CQQD END";
+
+            int maxStt = Convert.ToInt32(_data.DbData.GetDataTable(string.Format(sqlQuery, currentCQQD, currentNgayNN)).Rows[0]["max"]);
             DataView dv = new DataView(_data.DsData.Tables[1]);
             dv.RowStateFilter = DataViewRowState.Added;
 
