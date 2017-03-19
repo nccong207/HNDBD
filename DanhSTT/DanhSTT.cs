@@ -32,9 +32,11 @@ namespace DanhSTT
             //Lấy maximum STT trong DB
 
             //Lấy maximum STT trong DB
-            string sqlQuery = "select year(b.NgayNN) as year, CASE WHEN b.CQQD LIKE '%[0-9]%' THEN LEFT(b.CQQD, LEN(b.CQQD)-2) ELSE b.CQQD END as CQQD, max(Stt) as max" +
-                " FROM DTNhanNo a join MTNhanNo b on a.MTID = b.MTID where b.CQQD like  '%{0}%' and year(b.NgayNN) = year('{1}') group by year(b.NgayNN), " +
-                "CASE WHEN b.CQQD LIKE '%[0-9]%' THEN LEFT(b.CQQD, LEN(b.CQQD)-2) ELSE b.CQQD END";
+            //string sqlQuery = "select year(b.NgayNN) as year, CASE WHEN b.CQQD LIKE '%[0-9]%' THEN LEFT(b.CQQD, LEN(b.CQQD)-2) ELSE b.CQQD END as CQQD, max(Stt) as max" +
+            //    " FROM DTNhanNo a join MTNhanNo b on a.MTID = b.MTID where b.CQQD like  '%{0}%' and year(b.NgayNN) = year('{1}') group by year(b.NgayNN), " +
+            //    "CASE WHEN b.CQQD LIKE '%[0-9]%' THEN LEFT(b.CQQD, LEN(b.CQQD)-2) ELSE b.CQQD END";
+            string sqlQuery = "select max(Stt) as max" +
+                " FROM DTNhanNo a join MTNhanNo b on a.MTID = b.MTID where (CASE WHEN b.CQQD LIKE '%[0-9]%' THEN LEFT(b.CQQD, LEN(b.CQQD)-2) ELSE b.CQQD END) = (CASE WHEN '{0}' LIKE '%[0-9]%' THEN LEFT('{0}', LEN('{0}')-2) ELSE '{0}' END) and year(b.NgayNN) = year('{1}')";
 
             int maxStt = Convert.ToInt32(_data.DbData.GetDataTable(string.Format(sqlQuery, currentCQQD, currentNgayNN)).Rows[0]["max"]);
             DataView dv = new DataView(_data.DsData.Tables[1]);
