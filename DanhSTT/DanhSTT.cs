@@ -24,7 +24,7 @@ namespace DanhSTT
         public void ExecuteBefore()
         {
             DataRow drMaster = _data.DsData.Tables[0].Rows[_data.CurMasterIndex];
-            if (drMaster.RowState == DataRowState.Deleted)
+            if (drMaster.RowState == DataRowState.Deleted || drMaster.RowState == DataRowState.Modified)
                 return;
 
             var currentCQQD = drMaster["CQQD"].ToString();
@@ -38,7 +38,8 @@ namespace DanhSTT
             string sqlQuery = "select max(Stt) as max" +
                 " FROM DTNhanNo a join MTNhanNo b on a.MTID = b.MTID where (CASE WHEN b.CQQD LIKE '%[0-9]%' THEN LEFT(b.CQQD, LEN(b.CQQD)-2) ELSE b.CQQD END) = (CASE WHEN '{0}' LIKE '%[0-9]%' THEN LEFT('{0}', LEN('{0}')-2) ELSE '{0}' END) and year(b.NgayNN) = year('{1}')";
 
-            int maxStt = Convert.ToInt32(_data.DbData.GetDataTable(string.Format(sqlQuery, currentCQQD, currentNgayNN)).Rows[0]["max"]);
+            var maxString = _data.DbData.GetDataTable(string.Format(sqlQuery, currentCQQD, currentNgayNN)).Rows[0]["max"].ToString();
+            int maxStt = Convert.ToInt32(!string.IsNullOrEmpty(maxString) ? maxString : "0");
             DataView dv = new DataView(_data.DsData.Tables[1]);
             dv.RowStateFilter = DataViewRowState.Added;
 
