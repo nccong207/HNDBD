@@ -43,11 +43,14 @@ namespace DanhSTT
             DataView dv = new DataView(_data.DsData.Tables[1]);
             dv.RowStateFilter = DataViewRowState.Added;
 
+            dv.Sort = "DuAn";
             foreach (DataRowView drv in dv)
             {
                 maxStt++;
                 drv["Stt"] = maxStt;
             }
+
+            dv.Sort = string.Empty;
         }
 
         public InfoCustomData Info
