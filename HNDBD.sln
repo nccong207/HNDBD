@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckNgayGH", "CheckNgayGH\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaoSoCT", "TaoSoCT\TaoSoCT.csproj", "{70675401-AEB2-442B-B7C5-52B76ADC0AC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GLKC", "GLCK\GLKC.csproj", "{2425244C-1FC9-48B2-B76E-6B304F3CDBA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{70675401-AEB2-442B-B7C5-52B76ADC0AC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70675401-AEB2-442B-B7C5-52B76ADC0AC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70675401-AEB2-442B-B7C5-52B76ADC0AC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2425244C-1FC9-48B2-B76E-6B304F3CDBA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2425244C-1FC9-48B2-B76E-6B304F3CDBA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2425244C-1FC9-48B2-B76E-6B304F3CDBA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2425244C-1FC9-48B2-B76E-6B304F3CDBA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
