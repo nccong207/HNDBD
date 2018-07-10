@@ -75,9 +75,10 @@
     <Reference Include="FormFactory">
       <HintPath>..\CDT\bin\Debug\FormFactory.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\CDT2.0\CDT\bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\HoaTieu Accounting.Net 2014\Plugins\HTA\Microsoft.Office.Interop.Excel.dll</HintPath>
     </Reference>
     <Reference Include="Plugins, Version=1.0.5312.29234, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
